@@ -1,6 +1,7 @@
 import { Authenticator } from "remix-auth";
 import { sessionStorage } from "~/services/session.server";
 import { formStrategy } from "./form-strategy.server";
+import { googleStrategy } from "./google-strategy.server";
 
 export type User = {
   username: string;
@@ -18,3 +19,5 @@ authenticator.use(
   // same strategy multiple times, especially useful for the OAuth2 strategy.
   "user-pass"
 );
+
+authenticator.use(googleStrategy);
