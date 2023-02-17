@@ -14,7 +14,13 @@ export const googleStrategy = new GoogleStrategy(
       profile._json.email === "camillamdalan@gmail.com" &&
       profile._json.email_verified
     ) {
-      return { email: profile._json.email, username: profile.displayName };
+      return {
+        email: profile._json.email,
+        username: profile.displayName,
+        photo: profile._json.picture,
+      };
     }
+
+    throw new Error("User not registered.");
   }
 );

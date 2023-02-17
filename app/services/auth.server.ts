@@ -6,6 +6,7 @@ import { googleStrategy } from "./google-strategy.server";
 export type User = {
   username: string;
   email: string;
+  photo?: string;
 };
 
 // Create an instance of the authenticator, pass a generic with what
